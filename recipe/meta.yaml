@@ -20,11 +20,10 @@ requirements:
   build:
     - python
     - setuptools
-
-  run:
-    - python
   host:
     - pip
+  run:
+    - python
 
 test:
   imports:
