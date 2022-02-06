@@ -1,30 +1,32 @@
 {% set name = "flufl.enum" %}
 {% set version = "4.1.1" %}
-{% set sha256 = "67edefaca4347663c95f370398edce1d2267f293f25addca5680bd8bdc51a51c" %}
+
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 67edefaca4347663c95f370398edce1d2267f293f25addca5680bd8bdc51a51c
 
 build:
-  number: 1000
-  skip: true  # [py3k]
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 1001
+  noarch: python
+  script: python -m pip install . -vv
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
-
+    - pip
   run:
     - python
 
 test:
+  requires:
+    - pip
+  commands:
+    - pip check
   imports:
     - flufl
     - flufl.enum
