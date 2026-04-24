@@ -1,5 +1,5 @@
 {% set name = "flufl.enum" %}
-{% set version = "4.1.1" %}
+{% set version = "6.1.0" %}
 
 
 package:
@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 67edefaca4347663c95f370398edce1d2267f293f25addca5680bd8bdc51a51c
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/flufl_enum-{{ version }}.tar.gz
+  sha256: 1def2f98963d1c75732f46ea5b14e81cff7f3f6b55bc5ac951d2f955fdf6fc7f
 
 build:
-  number: 1001
+  number: 0
   noarch: python
   script: python -m pip install . -vv
 
@@ -36,6 +36,7 @@ test:
 about:
   home: http://launchpad.net/flufl.enum
   license: LGPLv3+
+  license_file: LICENSE
   summary: 'A Python enumeration package.'
 
 extra:
